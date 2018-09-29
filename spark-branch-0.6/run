@@ -26,15 +26,15 @@ if [ "$1" = "spark.deploy.master.Master" -o "$1" = "spark.deploy.worker.Worker" 
 fi
 
 if [ "$SPARK_LAUNCH_WITH_SCALA" == "1" ]; then
-  if [ `command -v scala` ]; then
-    RUNNER="scala"
-  else
+  # if [ `command -v scala` ]; then
+  #   RUNNER="scala"
+  # else
     if [ -z "$SCALA_HOME" ]; then
       echo "SCALA_HOME is not set" >&2
       exit 1
     fi
     RUNNER="${SCALA_HOME}/bin/scala"
-  fi
+  # fi
 else
   if [ `command -v java` ]; then
     RUNNER="java"
@@ -53,6 +53,8 @@ else
     SCALA_LIBRARY_PATH="$SCALA_HOME/lib"
   fi
 fi
+
+echo "runner $RUNNER"
 
 # Figure out how much memory to use per executor and set it as an environment
 # variable so that our process sees it and can report it to Mesos
