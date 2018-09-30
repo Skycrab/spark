@@ -20,7 +20,7 @@ reports/
 .project
 .classpath
 .scala_dependencies
-lib_managed/
+lib_managed2/
 src_managed/
 project/boot/
 project/plugins/project/build.properties
