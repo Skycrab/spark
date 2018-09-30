@@ -12,15 +12,17 @@ resolvers += "spray repo" at "http://repo.spray.io"
 
 resolvers += Resolver.url("bintray-sbt-plugins", url("http://dl.bintray.com/sbt/sbt-plugin-releases"))(Resolver.ivyStylePatterns)
 
+resolvers += Resolver.url("sbt-plugin-releases", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
+
 addSbtPlugin("com.eed3si9n" %% "sbt-assembly" % "0.8.3")
 
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0-RC1")
+// addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0-RC1")
 
-addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.0.0")
+// addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.0.0")
 
-addSbtPlugin("cc.spray" %% "sbt-twirl" % "0.5.2")
+// addSbtPlugin("cc.spray" %% "sbt-twirl" % "0.5.2")
+addSbtPlugin("io.spray" % "sbt-twirl" % "0.6.0")
 
 // For Sonatype publishing
 
-//resolvers += Resolver.url("sbt-plugin-releases", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
 //addSbtPlugin("com.jsuereth" % "xsbt-gpg-plugin" % "0.6")
